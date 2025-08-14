@@ -1,4 +1,4 @@
-package com.fullstackabi.assignment;
+package com.fullstackabi.assignment.Assign1;
 // Concepts: Primitive data types, arithmetic operators, type casting, wrapper classes
 // Design a Java program to calculate the Equated Monthly Installment (EMI) for a loan. Input:
 // Principal (double), Interest rate (float), Tenure (int in years) Formula: EMI = [P × R × (1+R)^N] /
@@ -41,7 +41,7 @@ public class Assign1EMICalc {
         DecimalFormat df = new DecimalFormat("0.00");
 
         // Print the EMI
-        System.out.println("EMI for the loan is " + df.format(emi));
+        System.out.println("Monthly EMI for the loan is " + df.format(emi));
     }
 
 }
