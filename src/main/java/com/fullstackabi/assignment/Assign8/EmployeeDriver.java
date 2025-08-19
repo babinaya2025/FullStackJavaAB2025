@@ -11,7 +11,7 @@ public class EmployeeDriver {
         employees.add(new Employee(101, "B", "ADMIN", 300.00));
         employees.add(new Employee(102, "C", "HR", 400.00));
         employees.add(new Employee(103, "D", "IT", 500.00));
-        System.out.println("Employee List:" + employees.toString());
+        System.out.println("Employee List:" + employees);
 
         // Update
         Employee empUpdate1 = new Employee(101, "B", "IT", 300.00);

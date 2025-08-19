@@ -9,8 +9,6 @@ public class Employee {
     String department;
     double salary;
 
-    public Employee() {
-    }
 
     public Employee(int id, String name, String department, double salary) {
         this.id = id;
@@ -30,7 +28,7 @@ public class Employee {
     public int hashCode() {
         return Objects.hashCode(id);
     }
-    // TO display the employee with data. otherwise its not printing the employee content.
+    // TO display the employee with data. otherwise it's not printing the employee content.
     @Override
     public String toString() {
         return "Employee{" +
