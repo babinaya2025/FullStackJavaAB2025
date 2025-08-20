@@ -9,11 +9,11 @@ public class ProductCatalogDriver {
 
         // CRUD operations
         // Add a new product
-        products.put(104, new Product(104, "product5", 500.00));
-        products.put(102, new Product(102, "product3", 300.00));
-        products.put(101, new Product(101, "product2", 200.00));
-        products.put(100, new Product(100, "product1", 100.00));
-        products.put(103, new Product(103, "product4", 400.00));
+        products.put(104, new Product(104, "Book", 500.00));
+        products.put(102, new Product(102, "Pencil", 300.00));
+        products.put(101, new Product(101, "Pen", 200.00));
+        products.put(100, new Product(100, "A Book", 100.00));
+        products.put(103, new Product(103, "C Product", 400.00));
 
 
         // duplicate key not allowed but duplicate values are allowed
@@ -56,28 +56,21 @@ public class ProductCatalogDriver {
         }
 
         // Sorting - By Product name ; by Price (ascending/descending order)
-        System.out.println("Products sorted by Price ");
-
         // Create an instance of the custom Comparator
         Comparator<Product> priceComparator = new ProductPriceComparator();
-
         // Initialize the TreeMap with the custom Comparator
-        Map<Product,Integer> sortedMap = new TreeMap<>(priceComparator);
+        Map<Product, Integer> sortedMapByPrice = new TreeMap<>(priceComparator);
 
-        for(Product product : sortedMap.keySet()){
-            System.out.println("Sorted Map");
-            System.out.println(product);
+        for (Product product : products.values()) {
+            sortedMapByPrice.put(product, product.getProductId());
         }
+        System.out.println("Sorted Value by Price:" + sortedMapByPrice);
 
-        // The keys (Product objects) are automatically sorted by price
-        // Iterate and print the sorted map
-//        for(Product product : products.values()){
-//            System.out.println(sortedMap.get(product));
-//        }
-//        for (Map.Entry<Product, String> entry : sortedMap.entrySet()) {
-//            System.out.println("Product: " + entry.getKey() + ", Category: " + entry.getValue());
-//        }
-
-
+        Comparator<Product> productNameComparator = new ProductNameComparator();
+        Map<Product,Integer> sortedMapByName = new TreeMap<>(productNameComparator);
+        for (Product product : products.values()) {
+            sortedMapByName.put(product, product.getProductId());
+        }
+        System.out.println("Sorted Value by Name:" + sortedMapByName);
     }
 }
