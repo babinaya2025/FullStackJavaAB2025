@@ -21,7 +21,6 @@ public class StreamDriver {
                 .filter((number) -> number >= 18)
                 .forEach((num) -> System.out.println("Person with age " + num + " Can Vote"));
         // Mapping Data – Uppercase Names
-
         //List<String> names = new ArrayList<>();
         List<String> names = Arrays.asList("john", "emma", "alex");
         names

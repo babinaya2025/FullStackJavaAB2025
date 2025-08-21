@@ -21,24 +21,24 @@ public class LamdbaDriver {
 
         //. Consumer<T> – Send Alerts for Large Transactions
         List<Double> transactions = Arrays.asList(5000.0, 15000.0, 25000.0, 8000.0);
-        Predicate<Double>  isLargeTrans = transaction -> transaction > 10000;
-        Consumer<Double>   alert = transaction -> System.out.println("Alert : High Transaction Detected > 10000");
+        Predicate<Double> isLargeTrans = transaction -> transaction > 10000;
+        Consumer<Double> alert = transaction -> System.out.println("Alert : High Transaction Detected > 10000");
         transactions.stream().filter(isLargeTrans).forEach(alert);
 
         //Supplier<T> – Generate Random PIN
-        Supplier<Integer> atmPin = () ->{
+        Supplier<Integer> atmPin = () -> {
             System.out.println("ATM Pin");
             Random rand = new Random();
             return rand.nextInt(9999);
         };
-        for(int i=0;i<3;i++){
+        for (int i = 0; i < 3; i++) {
             System.out.println(atmPin.get());
         }
 
         //Function<T, R> – Convert Currency
         List<Double> usdAmounts = Arrays.asList(10.0, 25.5, 100.0);
         double usdExchangeRate = 83.0;
-        Function<Double,Double> toCurrency = usdAmount -> usdAmount * usdExchangeRate;
+        Function<Double, Double> toCurrency = usdAmount -> usdAmount * usdExchangeRate;
         List<Double> inrCurrency =
                 usdAmounts
                         .stream()
@@ -48,9 +48,9 @@ public class LamdbaDriver {
 
         //BiFunction<T, U, R> – Calculate Discounted Price
 
-        BiFunction<Double,Double,Double> finalPrice =
-                (originalPrice,discountPercentage) -> originalPrice - (originalPrice * discountPercentage / 100);
-        System.out.println("Discounted Price : " +finalPrice.apply(4000.00,5.0));
+        BiFunction<Double, Double, Double> finalPrice =
+                (originalPrice, discountPercentage) -> originalPrice - (originalPrice * discountPercentage / 100);
+        System.out.println("Discounted Price : " + finalPrice.apply(4000.00, 5.0));
 
         //Predicate<Integer/Double/String> → Check conditions (pass/fail, threshold,
         //matching).
