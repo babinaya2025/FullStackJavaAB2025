@@ -37,7 +37,8 @@ public class SalesDataProcess {
 
         // Calculate the total sales amount (sum).
         System.out.println("Sum of Sales");
-        Double totalSales = sales.stream().mapToDouble(Double::valueOf).sum();
+      //  Double totalSales = sales.stream().mapToDouble(Double::valueOf).sum();
+        Double totalSales = sales.stream().reduce(0.0, Double::sum);
         System.out.println(totalSales);
 
     }
