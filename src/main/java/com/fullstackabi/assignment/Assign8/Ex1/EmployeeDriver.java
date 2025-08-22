@@ -1,4 +1,4 @@
-package com.fullstackabi.assignment.Assign8;
+package com.fullstackabi.assignment.Assign8.Ex1;
 
 import java.util.ArrayList;
 
