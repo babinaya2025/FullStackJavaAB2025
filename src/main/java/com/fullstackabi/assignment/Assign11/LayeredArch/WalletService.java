@@ -14,4 +14,18 @@ public interface WalletService {
     Wallet getUserWalletByEmailId(String userEmailId) throws WalletException;
 
     Collection<Wallet> getAllCustomerWallets() throws WalletException;
+
+    Wallet userLogin(String userEmailId, String password) throws WalletException;
+
+    Collection<Wallet> sortCustomerWallets(String order) throws WalletException;
+
+    // if name exists as substring in the name.
+//    Collection<Wallet> findWalletsByName(String name) throws WalletException;
+//
+//    Collection<Wallet> findAllWalletsHavingBalanceBetween(Double fromAmount, Double toAmount) throws WalletException;
+//
+//    Boolean updateWalletPassword(String emailId, String oldPassword, String newPassword) throws WalletException;
+//
+
+
 }

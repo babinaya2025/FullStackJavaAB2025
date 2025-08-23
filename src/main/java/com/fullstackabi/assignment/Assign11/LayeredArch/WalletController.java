@@ -59,5 +59,19 @@ public class WalletController {
             System.out.println(e.getMessage());
         }
 
+        try {
+            walletService.userLogin("name2@gmail.com" , "123@name2");
+        } catch (WalletException e) {
+          //  throw new RuntimeException(e);
+            System.out.println(e.getMessage());
+        }
+
+        try {
+            System.out.println("Sort By Name :" +walletService.sortCustomerWallets("desc"));
+        } catch (WalletException e) {
+           // throw new RuntimeException(e);
+            System.out.println(e.getMessage());
+        }
+
     }
 }
